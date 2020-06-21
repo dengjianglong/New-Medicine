@@ -1,0 +1,22 @@
+package com.ssm.login.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.ssm.login.pojo.Dm;
+import com.ssm.login.pojo.Doctor;
+import com.ssm.login.pojo.Dynasty;
+
+public interface DynastyService {
+	
+	ArrayList<Dynasty> selectByDyName(String dyName);
+
+	List<Dynasty> findAll();
+
+	void deleteDynasty(int id);
+
+	void savedynasty(Dynasty dynasty);
+
+
+
+}

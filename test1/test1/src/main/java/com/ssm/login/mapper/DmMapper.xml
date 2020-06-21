@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.login.dao.DmDao" >
+<resultMap id="BaseResultMap" type="com.ssm.login.pojo.Dm" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="dmName" property="dmName" jdbcType="VARCHAR" />
+    <result column="dmPrescription" property="dmPrescription" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, dmName,dmPrescription
+  </sql>
+  <select id="selectBydmName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select * from t_dm where dmName = #{dmName}
+  </select>
+
+  
+  </mapper>

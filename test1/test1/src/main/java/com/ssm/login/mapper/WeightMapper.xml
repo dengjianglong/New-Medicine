@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.login.dao.WeightDao" >
+<resultMap id="BaseResultMap" type="com.ssm.login.pojo.Weight" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="T_dynasty" property="tDynasty" jdbcType="VARCHAR" />
+    <result column="T_Jin" property="tJin" jdbcType="VARCHAR" />
+    <result column="T_Dan" property="tDan" jdbcType="VARCHAR" />
+    <result column="T_Jun" property="tJun" jdbcType="VARCHAR" />
+    <result column="T_Liang" property="tLiang" jdbcType="VARCHAR" />
+    <result column="T_Zhu" property="tZhu" jdbcType="VARCHAR" />
+    <result column="T_Qian" property="tQian" jdbcType="VARCHAR" />
+    <result column="T_Fen" property="tFen" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, T_dynasty,T_Jin,T_Dan,T_Jun,T_Liang,T_Zhu,T_Qian,T_Fen
+  </sql>
+  <select id="selectBytDynasty" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select * from t_weight where T_dynasty = #{tDynasty}
+  </select>
+  </mapper>

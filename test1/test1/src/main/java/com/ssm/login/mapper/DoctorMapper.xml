@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.login.dao.DoctorDao" >
+<resultMap id="BaseResultMap" type="com.ssm.login.pojo.Doctor" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="D_name" property="dName" jdbcType="VARCHAR" />
+    <result column="D_brief" property="dBrief" jdbcType="VARCHAR" />  
+    <result column="D_place" property="dPlace" jdbcType="VARCHAR" />  
+    <result column="D_birth" property="dBirth" jdbcType="VARCHAR" />  
+     <result column="D_pic" property="dPic" jdbcType="VARCHAR" />    
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, D_name,D_brief,D_place,D_birth,D_pic
+  </sql>
+  <select id="selectBydName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select * from t_doctor where D_name = #{dName}
+  </select>
+ </mapper>

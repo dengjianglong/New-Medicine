@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.login.dao.DynastyDao" >
+<resultMap id="BaseResultMap" type="com.ssm.login.pojo.Dynasty" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="dyName" jdbcType="VARCHAR" />
+    
+    <result column="qin" property="qin" jdbcType="VARCHAR" />
+    
+    <result column="sanguo" property="sanguo" jdbcType="VARCHAR" />
+    
+    <result column="sui" property="sui" jdbcType="VARCHAR" />
+    <result column="tang" property="tang" jdbcType="VARCHAR" />
+   
+    <result column="yuan" property="yuan" jdbcType="VARCHAR" />
+    
+    <result column="qing" property="qing" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name,qin,sanguo,sui,tang,yuan,qing
+  </sql>
+  <select id="selectBydyName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select * from t_dynasty where name = #{dyName}
+  </select>
+  </mapper>
